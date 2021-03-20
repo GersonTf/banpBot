@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Singleton
 class MessageService {
 
-    @Client("https://api.telegram.org/bot848542380:AAEjlY6qaxA0eEFUXoOFDHwAVMI4-91kW28")
+    @Client("https://api.telegram.org/bot${System.getenv('BOT_KEY')}")
     @Inject
     RxHttpClient httpClient
 
