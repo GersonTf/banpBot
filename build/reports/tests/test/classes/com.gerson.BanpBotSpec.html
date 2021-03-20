@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.001s</div>
+<div class="counter">0.330s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,116 +61,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab1">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="initializationError"></a>
-<h3 class="failures">initializationError</h3>
-<span class="code">
-<pre>io.micronaut.context.exceptions.BeanInstantiationException: Error instantiating bean of type [io.netty.channel.EventLoopGroup]: failed to create a child event loop
-	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:1972)
-	at io.micronaut.context.DefaultBeanContext.createAndRegisterSingletonInternal(DefaultBeanContext.java:2724)
-	at io.micronaut.context.DefaultBeanContext.createAndRegisterSingleton(DefaultBeanContext.java:2710)
-	at io.micronaut.context.DefaultBeanContext.getBeanForDefinition(DefaultBeanContext.java:2382)
-	at io.micronaut.context.DefaultBeanContext.getBeanInternal(DefaultBeanContext.java:2356)
-	at io.micronaut.context.DefaultBeanContext.findBean(DefaultBeanContext.java:1282)
-	at io.micronaut.context.DefaultBeanContext.findBean(DefaultBeanContext.java:752)
-	at io.micronaut.context.BeanLocator.findBean(BeanLocator.java:149)
-	at io.micronaut.http.netty.channel.DefaultEventLoopGroupRegistry.getEventLoopGroup(DefaultEventLoopGroupRegistry.java:144)
-	at io.micronaut.http.server.netty.NettyHttpServer.createWorkerEventLoopGroup(NettyHttpServer.java:445)
-	at io.micronaut.http.server.netty.NettyHttpServer.start(NettyHttpServer.java:306)
-	at io.micronaut.http.server.netty.NettyHttpServer.start(NettyHttpServer.java:113)
-	at io.micronaut.test.extensions.AbstractMicronautExtension.beforeClass(AbstractMicronautExtension.java:239)
-	at io.micronaut.test.extensions.spock.MicronautSpockExtension.lambda$visitSpecAnnotation$3(MicronautSpockExtension.java:97)
-	at org.spockframework.runtime.extension.MethodInvocation.proceed(MethodInvocation.java:101)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:136)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.spockframework.runtime.model.MethodInfo.invoke(MethodInfo.java:136)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.IllegalStateException: failed to create a child event loop
-	at io.netty.util.concurrent.MultithreadEventExecutorGroup.&lt;init&gt;(MultithreadEventExecutorGroup.java:88)
-	at io.netty.util.concurrent.MultithreadEventExecutorGroup.&lt;init&gt;(MultithreadEventExecutorGroup.java:58)
-	at io.netty.util.concurrent.MultithreadEventExecutorGroup.&lt;init&gt;(MultithreadEventExecutorGroup.java:47)
-	at io.netty.channel.MultithreadEventLoopGroup.&lt;init&gt;(MultithreadEventLoopGroup.java:59)
-	at io.netty.channel.nio.NioEventLoopGroup.&lt;init&gt;(NioEventLoopGroup.java:86)
-	at io.netty.channel.nio.NioEventLoopGroup.&lt;init&gt;(NioEventLoopGroup.java:81)
-	at io.netty.channel.nio.NioEventLoopGroup.&lt;init&gt;(NioEventLoopGroup.java:68)
-	at io.micronaut.http.netty.channel.NioEventLoopGroupFactory.createEventLoopGroup(NioEventLoopGroupFactory.java:65)
-	at io.micronaut.http.netty.channel.EventLoopGroupFactory.createEventLoopGroup(EventLoopGroupFactory.java:73)
-	at io.micronaut.http.netty.channel.DefaultEventLoopGroupFactory.createEventLoopGroup(DefaultEventLoopGroupFactory.java:83)
-	at io.micronaut.http.netty.channel.DefaultEventLoopGroupRegistry.defaultEventLoopGroup(DefaultEventLoopGroupRegistry.java:129)
-	at io.micronaut.context.DefaultBeanContext.doCreateBean(DefaultBeanContext.java:1943)
-	... 62 more
-Caused by: io.netty.channel.ChannelException: failed to open a new selector
-	at io.netty.channel.nio.NioEventLoop.openSelector(NioEventLoop.java:175)
-	at io.netty.channel.nio.NioEventLoop.&lt;init&gt;(NioEventLoop.java:142)
-	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:146)
-	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:37)
-	at io.netty.util.concurrent.MultithreadEventExecutorGroup.&lt;init&gt;(MultithreadEventExecutorGroup.java:84)
-	... 73 more
-Caused by: java.io.IOException: Too many open files in system
-	at java.base/sun.nio.ch.KQueueSelectorImpl.&lt;init&gt;(KQueueSelectorImpl.java:86)
-	at java.base/sun.nio.ch.KQueueSelectorProvider.openSelector(KQueueSelectorProvider.java:35)
-	at io.netty.channel.nio.NioEventLoop.openSelector(NioEventLoop.java:173)
-	... 77 more
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -181,16 +78,16 @@ Caused by: java.io.IOException: Too many open files in system
 </tr>
 </thead>
 <tr>
-<td class="failures">initializationError</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
+<td class="success">test it works</td>
+<td class="success">0.330s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>?[36m20:02:29.561?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
+<pre>?[36m13:18:52.029?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
 </pre>
 </span>
 </div>
@@ -202,7 +99,7 @@ Caused by: java.io.IOException: Too many open files in system
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.8.3</a> at Mar 19, 2021, 8:02:30 PM</p>
+<a href="http://www.gradle.org">Gradle 6.8.3</a> at Mar 20, 2021, 1:18:53 PM</p>
 </div>
 </div>
 </body>

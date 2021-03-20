@@ -2,6 +2,7 @@ plugins {
     id("groovy")
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("io.micronaut.application") version "1.4.2"
+    id("com.google.cloud.tools.jib") version "2.6.0"
 }
 
 version = "0.1"
@@ -25,6 +26,16 @@ dependencies {
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-client")
+
+    implementation("io.micronaut.security:micronaut-security")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+
+    compileOnly("io.micronaut.security:micronaut-security-annotations")
+    implementation("io.micronaut:micronaut-validation")
+
+    testImplementation("org.testcontainers:spock")
+    testImplementation("org.testcontainers:testcontainers")
+
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
@@ -37,5 +48,8 @@ java {
     targetCompatibility = JavaVersion.toVersion("11")
 }
 
-
-
+jib {
+    to {
+        image = "gcr.io/myapp/jib-image"
+    }
+}
