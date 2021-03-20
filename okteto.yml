@@ -11,3 +11,5 @@ resources:
   requests:
     memory: "2G"
     cpu: "1000m"
+environment:
+  - BOT_KEY
