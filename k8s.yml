@@ -17,9 +17,6 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-          env:
-            - name: BOT_KEY
-              value: 1756360491:AAFeI1EBm4MoCyE6RydpTXeP0uSZ4bkAfps
           readinessProbe:
             httpGet:
               path: /health/readiness
