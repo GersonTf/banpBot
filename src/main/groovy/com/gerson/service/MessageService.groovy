@@ -1,5 +1,6 @@
 package com.gerson.service
 
+import io.micronaut.context.annotation.Value
 import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.client.annotation.Client
 
@@ -9,7 +10,10 @@ import javax.inject.Singleton
 @Singleton
 class MessageService {
 
-    @Client("https://api.telegram.org/bot1756360491:AAHdX7YetNXjjob8_R48nXQt9ewei46xpxY")
+    @Value('${bot.token}')
+    String botToken
+
+    @Client("https://api.telegram.org/bot")
     @Inject
     RxHttpClient httpClient
 
@@ -18,6 +22,6 @@ class MessageService {
      * @param message to send and chatId
      */
     void sendNotificationToTelegram(String message, String chatId) {
-        httpClient.toBlocking().exchange("/sendMessage?text=$message&chat_id=$chatId")
+        httpClient.toBlocking().exchange("$botToken/sendMessage?text=$message&chat_id=$chatId")
     }
 }

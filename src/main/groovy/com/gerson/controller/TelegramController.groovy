@@ -23,7 +23,7 @@ class TelegramController {
     @Get("/helloWorld")
     @Produces(MediaType.APPLICATION_JSON)
     Map index() {
-        [response: "I am alive!!"]
+        [response: "Hello world!"]
     }
 
     /**
