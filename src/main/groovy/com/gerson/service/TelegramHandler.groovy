@@ -37,7 +37,7 @@ class TelegramHandler {
 
     void help(Update params) {
         String chatID = params?.message?.getChat()?.getId()
-        messageService.sendNotificationToTelegram("use /start to say hello world!", chatID)
+        messageService.sendNotificationToTelegram("/startToSayHelloWorld!", chatID)
     }
 }
 
