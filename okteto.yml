@@ -1,0 +1,13 @@
+name: banp-bot
+autocreate: true
+image: okteto/gradle:latest
+command: ["bash"]
+forward:
+  - 8080:8080
+  - 5005:5005
+resources:
+  limits:
+    memory: "2G"
+  requests:
+    memory: "2G"
+    cpu: "1000m"
