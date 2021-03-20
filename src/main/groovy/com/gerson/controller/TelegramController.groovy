@@ -27,7 +27,7 @@ class TelegramController {
     }
 
     /**
-     * This endpoint will be the one that receive the messages from your bot trough the webhook that you will be configured:
+     * This endpoint will be the one that receive the messages from your bot trough the webhook that you will configure:
      * https://core.telegram.org/bots/api#setwebhook (the url param that you have to send must point to this endpoint)
      **/
     @Secured(SecurityRule.IS_ANONYMOUS)

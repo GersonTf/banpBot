@@ -16,7 +16,7 @@ class TelegramHandler {
 
     private static final def commands = ['start', 'help']
 
-    static void messageReceiver(Update params) {
+    void messageReceiver(Update params) {
         String message = params?.message?.text?.drop(1)
         log.info("message received $message")
         validateMessage(message)
@@ -24,7 +24,7 @@ class TelegramHandler {
         // invokeMethod(message, params)
     }
 
-    static void validateMessage(String message) {
+    void validateMessage(String message) {
         if (!(message in commands)) {
             throw new ValidationException("the message is not a valid command")
         }
