@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "demo"
+  name: "banp-bot"
 spec:
   selector:
     matchLabels:
-      app: "demo"
+      app: "banp-bot"
   template:
     metadata:
       labels:
-        app: "demo"
+        app: "banp-bot"
     spec:
       containers:
-        - name: "demo"
-          image: "gcr.io/demo/jib-image"
+        - name: "banp-bot"
+          image: "banp-bot/jib-image"
           ports:
             - name: http
               containerPort: 8080
@@ -34,10 +34,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "demo"
+  name: "banp-bot"
 spec:
   selector:
-    app: "demo"
+    app: "banp-bot"
   type: LoadBalancer
   ports:
     - protocol: "TCP"

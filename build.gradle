@@ -50,6 +50,6 @@ java {
 
 jib {
     to {
-        image = "gcr.io/myapp/jib-image"
+        image = "banp-bot/jib-image"
     }
 }
