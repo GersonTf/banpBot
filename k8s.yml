@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "banp-bot"
+  name: "banpbot"
 spec:
   selector:
     matchLabels:
-      app: "banp-bot"
+      app: "banpbot"
   template:
     metadata:
       labels:
-        app: "banp-bot"
+        app: "banpbot"
     spec:
       containers:
-        - name: "banp-bot"
-          image: "banp-bot/jib-image"
+        - name: "banpbot"
+          image: "registry.cloud.okteto.net/gersontf/banpbot"
           ports:
             - name: http
               containerPort: 8080
@@ -34,10 +34,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: "banp-bot"
+  name: "banpbot"
 spec:
   selector:
-    app: "banp-bot"
+    app: "banpbot"
   type: LoadBalancer
   ports:
     - protocol: "TCP"

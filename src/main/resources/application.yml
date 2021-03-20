@@ -3,3 +3,7 @@ micronaut:
     name: banpBot
   security:
     enabled: false
+
+GERSONTF_USERNAME: test
+
+

@@ -1,5 +1,0 @@
-micronaut:
-  application:
-    name: banpBot
-  security:
-    enabled: false

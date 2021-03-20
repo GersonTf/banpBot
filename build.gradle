@@ -50,6 +50,10 @@ java {
 
 jib {
     to {
-        image = "banp-bot/jib-image"
+        image = "registry.cloud.okteto.net/gersontf/banpbot"
+        auth {
+            username = project.findProperty("GERSONTF_USERNAME")
+            password = project.findProperty("GERSONTF_PASSWORD")
+        }
     }
 }

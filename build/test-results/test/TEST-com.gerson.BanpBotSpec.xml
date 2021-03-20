@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.gerson.BanpBotSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-20T12:18:53" hostname="ohanas-Mac-mini.local" time="0.33">
-  <properties/>
-  <testcase name="test it works" classname="com.gerson.BanpBotSpec" time="0.33"/>
-  <system-out><![CDATA[?[36m13:18:52.029?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test]
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
