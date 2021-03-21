@@ -2,6 +2,7 @@ package com.gerson.controller
 
 import com.gerson.service.TelegramHandler
 import com.gerson.telegram.model.Update
+import io.micronaut.context.annotation.Value
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
@@ -16,6 +17,9 @@ import javax.inject.Inject
 @Controller
 class TelegramController {
 
+    @Value('${bot.token}')
+    String botToken
+
     @Inject
     TelegramHandler telegramHandler
 
@@ -23,7 +27,7 @@ class TelegramController {
     @Get("/helloWorld")
     @Produces(MediaType.APPLICATION_JSON)
     Map index() {
-        [response: "Hello world!"]
+        [response: botToken]
     }
 
     /**
