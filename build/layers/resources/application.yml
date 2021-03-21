@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: banpBot
+  security:
+    enabled: false
+bot:
+  token: ${BOT_KEY}
